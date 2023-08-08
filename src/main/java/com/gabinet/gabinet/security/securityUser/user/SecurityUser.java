@@ -5,7 +5,7 @@ import lombok.Data;
 import net.bytebuddy.utility.nullability.MaybeNull;
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Data
 @Table(name = "security_user")

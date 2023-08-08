@@ -3,6 +3,7 @@ package com.gabinet.gabinet.visit;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/visit")
 @RestController
@@ -25,12 +26,20 @@ public class VisitController {
     }
 
     @PostMapping("/{id}/delete")
-    public void deleteById(Long id){
+    public void deleteById(@PathVariable Long id){
         visitService.delete(id);
     }
     @GetMapping("/client/{id}")
     public List<Visit> getByClientId(@PathVariable Long id){
         return visitService.getByClientId(id);
     }
+    @GetMapping("/{id}")
+    public Optional byId(@PathVariable Long id){
+        return visitService.byId(id);
+    }
 
+    @PostMapping("/{id}")
+    public Visit save(@PathVariable Long id, @RequestBody Visit visit){
+        return visitService.update(id,visit);
+    }
 }

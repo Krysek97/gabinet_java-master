@@ -34,4 +34,14 @@ public class VisitService {
         return visitRepository.findByClientId(id);
     }
 
+    public Visit update (Long id, Visit visit) {
+        Optional<Visit> oldVisit = visitRepository.findById(id);
+        if (oldVisit.isPresent()){
+            Visit newVisit = oldVisit.get();
+            newVisit.setDate(visit.getDate());
+            newVisit.setNote(visit.getNote());
+            return visitRepository.save(newVisit);
+        }
+        return visit;
+    }
 }

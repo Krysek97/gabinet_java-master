@@ -1,10 +1,9 @@
 package com.gabinet.gabinet.visit;
 
-import com.gabinet.gabinet.client.Client;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Data

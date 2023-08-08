@@ -3,7 +3,7 @@ package com.gabinet.gabinet.client;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "CLIENT")
